@@ -42,6 +42,12 @@ import MapReduceViz from './MapReduceViz';
 import JoinViz from './JoinViz';
 import BatchFaultsViz from './BatchFaultsViz';
 import PregelViz from './PregelViz';
+import BrokerSim from './BrokerSim';
+import LogBrokerSim from './LogBrokerSim';
+import DualWriteSim from './DualWriteSim';
+import EventSourcingViz from './EventSourcingViz';
+import StreamTimeViz from './StreamTimeViz';
+import ExactlyOnceSim from './ExactlyOnceSim';
 
 /** Registry of interactive visualizations, referenced from lessons as `:::visual Name | Title`. */
 export const VIZ: Record<string, ComponentType<any>> = {
@@ -98,4 +104,11 @@ export const VIZ: Record<string, ComponentType<any>> = {
   JoinViz,
   BatchFaultsViz,
   PregelViz,
+  // Chapter 11
+  BrokerSim,
+  LogBrokerSim,
+  DualWriteSim,
+  EventSourcingViz,
+  StreamTimeViz,
+  ExactlyOnceSim,
 };

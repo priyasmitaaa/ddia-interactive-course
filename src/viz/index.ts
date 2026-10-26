@@ -30,6 +30,13 @@ import MVCCViz from './MVCCViz';
 import NetworkTimeoutSim from './NetworkTimeoutSim';
 import ClockSkewLWW from './ClockSkewLWW';
 import LeaseFencingSim from './LeaseFencingSim';
+import LinearizabilityViz from './LinearizabilityViz';
+import QuorumRaceSim from './QuorumRaceSim';
+import CAPSim from './CAPSim';
+import CausalityViz from './CausalityViz';
+import TOBSim from './TOBSim';
+import TwoPCSim from './TwoPCSim';
+import RaftSim from './RaftSim';
 
 /** Registry of interactive visualizations, referenced from lessons as `:::visual Name | Title`. */
 export const VIZ: Record<string, ComponentType<any>> = {
@@ -72,4 +79,12 @@ export const VIZ: Record<string, ComponentType<any>> = {
   NetworkTimeoutSim,
   ClockSkewLWW,
   LeaseFencingSim,
+  // Chapter 9
+  LinearizabilityViz,
+  QuorumRaceSim,
+  CAPSim,
+  CausalityViz,
+  TOBSim,
+  TwoPCSim,
+  RaftSim,
 };

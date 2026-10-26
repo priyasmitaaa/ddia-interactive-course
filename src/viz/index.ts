@@ -27,6 +27,9 @@ import RebalanceSim from './RebalanceSim';
 import RoutingSim from './RoutingSim';
 import TxnSim from './TxnSim';
 import MVCCViz from './MVCCViz';
+import NetworkTimeoutSim from './NetworkTimeoutSim';
+import ClockSkewLWW from './ClockSkewLWW';
+import LeaseFencingSim from './LeaseFencingSim';
 
 /** Registry of interactive visualizations, referenced from lessons as `:::visual Name | Title`. */
 export const VIZ: Record<string, ComponentType<any>> = {
@@ -65,4 +68,8 @@ export const VIZ: Record<string, ComponentType<any>> = {
   // Chapter 7
   TxnSim,
   MVCCViz,
+  // Chapter 8
+  NetworkTimeoutSim,
+  ClockSkewLWW,
+  LeaseFencingSim,
 };

@@ -20,6 +20,8 @@ concurrency:
 
 jobs:
   build:
+    # Pages on private repositories needs a paid plan: stay quiet while private (see docs/SETUP.md).
+    if: ${{ !github.event.repository.private || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

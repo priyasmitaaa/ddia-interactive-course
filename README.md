@@ -21,9 +21,11 @@ you learned.
 
 **https://priyasmitaaa.github.io/ddia-interactive-course/**
 
-Works on phones, tablets and any computer. Progress is saved in that browser automatically. Page links can't open
-the PDF there, since it's never uploaded, so they tell you which page to open in your own copy instead. To run the
-Python exercises you still need a computer with Python (Option B).
+This hosted copy is published automatically by GitHub Pages once the repository is **public**, or private on a
+plan that includes Pages (see [docs/SETUP.md](docs/SETUP.md#hosted-site-github-pages)). It works on phones, tablets
+and any computer, and progress is saved in that browser automatically. Page links can't open the PDF there, since
+it's never uploaded, so they tell you which page to open in your own copy instead. To run the Python exercises you
+still need a computer with Python (Option B).
 
 ### Option B: run it on your computer (full experience: page links open the PDF, exercises run locally)
 

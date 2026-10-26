@@ -119,6 +119,20 @@ Your progress isn't stored in the repository, so updating never touches it.
 | `python` not found (Windows) | Reinstall Python with "Add to PATH" ticked, or use `py` instead of `python`. |
 | An exercise "hangs" | Most finish in seconds. Labs with real threads take up to about a minute. Press Ctrl+C and check the README's "Run it". |
 
+## Hosted site (GitHub Pages)
+
+The workflow `.github/workflows/pages.yml` tests, builds and publishes the course on every push to `main`. It
+**skips itself while the repository is private**, because GitHub Pages for private repositories needs a paid plan.
+To turn the hosted site on:
+
+1. On GitHub, open the repository → **Settings → General → Danger Zone → Change visibility → Public**. (Or keep it
+   private if your plan includes Pages.)
+2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+3. **Actions → Deploy course to GitHub Pages → Run workflow** (or push any commit).
+4. After a minute the course is live at `https://priyasmitaaa.github.io/ddia-interactive-course/`.
+
+The book PDF is never part of the repository or the site.
+
 ## 7. For developers
 
 ```

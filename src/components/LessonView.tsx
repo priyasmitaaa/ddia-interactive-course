@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CHAPTERS, exerciseById, lessonById, lessons } from '../lib/content';
-import { pdfPage } from '../lib/parse';
+import { bookHrefPrinted } from '../lib/pdf';
 import { completeLesson, openLesson, uncompleteLesson, useStore } from '../lib/store';
 import type { Lesson, Section } from '../lib/types';
 import { VIZ } from '../viz';
@@ -121,7 +121,7 @@ function LessonHeader({ lesson }: { lesson: Lesson }) {
             {lesson.reading.map((r, i) => (
               <li key={i}>
                 <span>{r.section}</span>
-                <a className="pp" href={`/book.pdf#page=${pdfPage(r.from)}`} target="_blank" rel="noreferrer">
+                <a className="pp" href={bookHrefPrinted(r.from)} target="_blank" rel="noreferrer">
                   pp. {r.from}{r.to !== r.from ? `–${r.to}` : ''} ↗
                 </a>
               </li>

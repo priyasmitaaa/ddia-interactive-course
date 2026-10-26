@@ -10,7 +10,9 @@
     "preview": "vite preview --open",
     "validate": "vitest run tests/content.test.ts",
     "test": "vitest run",
-    "e2e": "node tests/e2e.mjs"
+    "e2e": "node tests/e2e.mjs",
+    "check:solutions": "python tools/check_solutions.py",
+    "curriculum": "python tools/gen_curriculum.py"
   },
   "dependencies": {
     "marked": "15.0.12",

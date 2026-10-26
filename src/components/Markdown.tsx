@@ -1,6 +1,6 @@
 import { Marked } from 'marked';
 import { memo, useMemo } from 'react';
-import { pdfPage } from '../lib/parse';
+import { bookHref, bookHrefPrinted } from '../lib/pdf';
 
 const marked = new Marked({ gfm: true, breaks: false });
 
@@ -12,8 +12,8 @@ marked.use({
       let external = /^https?:/.test(url);
       const pdf = url.match(/^pdf:(\d+)$/);
       const raw = url.match(/^pdfp:(\d+)$/);
-      if (pdf) { url = `/book.pdf#page=${pdfPage(Number(pdf[1]))}`; external = true; }
-      else if (raw) { url = `/book.pdf#page=${raw[1]}`; external = true; }
+      if (pdf) { url = bookHrefPrinted(Number(pdf[1])); external = true; }
+      else if (raw) { url = bookHref(Number(raw[1])); external = true; }
       else if (url.startsWith('lesson:')) url = `#/lesson/${url.slice(7)}`;
       else if (url.startsWith('ex:')) url = `#/practice/${url.slice(3)}`;
       const t = title ? ` title="${title}"` : '';

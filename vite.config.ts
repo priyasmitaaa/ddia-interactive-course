@@ -3,16 +3,19 @@ import react from '@vitejs/plugin-react';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Where the book lives. Override with the DDIA_PDF environment variable,
-// or drop a copy named book.pdf into this folder.
-const PDF_CANDIDATES = [
-  process.env.DDIA_PDF,
-  path.resolve(__dirname, 'book.pdf'),
-  'D:/Martin-Kleppmann---Designing-Data-Intensive-Applications_-O\u2019Reilly-Media-(2017).pdf',
-].filter(Boolean) as string[];
+// Where the book lives (never committed to git). In order of preference:
+//   1. the DDIA_PDF environment variable,
+//   2. a copy named book.pdf in this folder,
+//   3. a path written on the first line of a file named .pdfpath in this folder.
+function pdfCandidates(): string[] {
+  const out = [process.env.DDIA_PDF, path.resolve(__dirname, 'book.pdf')];
+  const pointer = path.resolve(__dirname, '.pdfpath');
+  if (fs.existsSync(pointer)) out.push(fs.readFileSync(pointer, 'utf8').split(/\r?\n/)[0].trim());
+  return out.filter(Boolean) as string[];
+}
 
 function findPdf(): string | null {
-  for (const p of PDF_CANDIDATES) if (fs.existsSync(p)) return p;
+  for (const p of pdfCandidates()) if (fs.existsSync(p)) return p;
   return null;
 }
 
@@ -40,7 +43,10 @@ function servePdf(): Plugin {
 // A fixed port matters: progress is saved in the browser per address,
 // so the course must always open at the same URL.
 export default defineConfig({
+  // Relative base so the built site works from any sub-path (e.g. GitHub Pages /repo-name/).
+  base: './',
   plugins: [react(), servePdf()],
+  build: { chunkSizeWarningLimit: 2500 },
   server: { port: 5317, strictPort: true },
   preview: { port: 5317, strictPort: true },
   test: { environment: 'node' },

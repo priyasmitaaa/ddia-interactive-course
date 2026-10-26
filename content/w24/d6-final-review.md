@@ -17,7 +17,7 @@ Scheduled questions from the whole course. The Review page keeps scheduling ques
 :::
 
 :::task Make it stick, and keep going
-1. **Back up your progress**: Progress page → *Export backup*. Keep the file safe. You can import it on any device.
+1. **Back up your progress**: Progress page → *Download backup*. Keep the file safe. You can import it on any device.
 2. **Keep reviewing**: open the Review page a few times a week. Intervals grow (1 → 4 → 10 → 25 → 60 → 150 days), so it takes only minutes. Questions you miss come back sooner.
 3. **Choose three next steps.** For example:
    - Read the published edition's final chapter (Week 22 summarized it), and the second edition when it's available.

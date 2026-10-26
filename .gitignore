@@ -4,3 +4,6 @@ book.pdf
 __pycache__
 *.pyc
 practice/**/data/
+
+.pdfpath
+*.pdf

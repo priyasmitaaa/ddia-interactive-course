@@ -37,6 +37,11 @@ import CausalityViz from './CausalityViz';
 import TOBSim from './TOBSim';
 import TwoPCSim from './TwoPCSim';
 import RaftSim from './RaftSim';
+import PipelineViz from './PipelineViz';
+import MapReduceViz from './MapReduceViz';
+import JoinViz from './JoinViz';
+import BatchFaultsViz from './BatchFaultsViz';
+import PregelViz from './PregelViz';
 
 /** Registry of interactive visualizations, referenced from lessons as `:::visual Name | Title`. */
 export const VIZ: Record<string, ComponentType<any>> = {
@@ -87,4 +92,10 @@ export const VIZ: Record<string, ComponentType<any>> = {
   TOBSim,
   TwoPCSim,
   RaftSim,
+  // Chapter 10
+  PipelineViz,
+  MapReduceViz,
+  JoinViz,
+  BatchFaultsViz,
+  PregelViz,
 };
